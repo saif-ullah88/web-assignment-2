@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bulb Control</title>
+    <script>
+        let bulbState = false;
+        
+        function setBulb(state) {
+            bulbState = state;
+            document.getElementById('bulb').src = state ? 'bulb_on.png' : 'bulb_off.png';
+            document.getElementById('radioOn').checked = state;
+            document.getElementById('radioOff').checked = !state;
+            document.getElementById('checkbox').checked = state;
+        }
+
+        function toggleBulb() {
+            setBulb(!bulbState);
+        }
+    </script>
+</head>
+<body>
+    <img id="bulb" src="bulb_off.png" height="100">
+
+    <div>
+        <h3>Radio Controls</h3>
+        <input type="radio" name="bulbRadio" id="radioOn" onchange="setBulb(true)"> On
+        <input type="radio" name="bulbRadio" id="radioOff" onchange="setBulb(false)" checked> Off
+    </div>
+
+    <div>
+        <h3>Button Controls</h3>
+        <button onclick="setBulb(true)">Turn On</button>
+        <button onclick="setBulb(false)">Turn Off</button>
+    </div>
+
+    <div>
+        <h3>Checkbox Control</h3>
+        <input type="checkbox" id="checkbox" onchange="setBulb(this.checked)"> Toggle
+    </div>
+
+    <div>
+        <h3>Universal Control</h3>
+        <button onclick="toggleBulb()">Toggle Bulb</button>
+    </div>
+    <div style="margin-top: 50px; border-top: 1px solid #ccc; padding: 10px;">
+    <h4>Group Members:</h4>
+    <ul>
+        <li>M.Danial Hafeez  - 33738</li>
+        <li>Saif Ullah - 33680</li>
+        <li>Malaz tariq - 33425</li>
+    </ul>
+</div>
+</body>
+</html>
